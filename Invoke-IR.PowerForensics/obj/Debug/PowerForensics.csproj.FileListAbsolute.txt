@@ -1,0 +1,10 @@
+C:\Users\Uproot\Documents\Visual Studio 2013\Projects\Invoke-IR.PowerForensics\Invoke-IR.PowerForensics\obj\Debug\Invoke-IR.PowerForensics.dll
+C:\Users\Uproot\Documents\Visual Studio 2013\Projects\Invoke-IR.PowerForensics\Invoke-IR.PowerForensics\obj\Debug\Invoke-IR.PowerForensics.pdb
+C:\Users\Uproot\Documents\Visual Studio 2013\Projects\Invoke-IR.PowerForensics\Invoke-IR.PowerForensics\bin\Debug\Invoke-IR.PowerForensics.dll
+C:\Users\Uproot\Documents\Visual Studio 2013\Projects\Invoke-IR.PowerForensics\Invoke-IR.PowerForensics\bin\Debug\Invoke-IR.PowerForensics.pdb
+C:\Users\Uproot\Documents\Visual Studio 2013\Projects\Invoke-IR.PowerForensics\Invoke-IR.PowerForensics\obj\Debug\PowerForensics.csprojResolveAssemblyReference.cache
+C:\Users\Uproot\Documents\GitHub\PowerForensics\src\Invoke-IR.PowerForensics\bin\Debug\Invoke-IR.PowerForensics.dll
+C:\Users\Uproot\Documents\GitHub\PowerForensics\src\Invoke-IR.PowerForensics\bin\Debug\Invoke-IR.PowerForensics.pdb
+C:\Users\Uproot\Documents\GitHub\PowerForensics\src\Invoke-IR.PowerForensics\obj\Debug\PowerForensics.csprojResolveAssemblyReference.cache
+C:\Users\Uproot\Documents\GitHub\PowerForensics\src\Invoke-IR.PowerForensics\obj\Debug\Invoke-IR.PowerForensics.dll
+C:\Users\Uproot\Documents\GitHub\PowerForensics\src\Invoke-IR.PowerForensics\obj\Debug\Invoke-IR.PowerForensics.pdb
