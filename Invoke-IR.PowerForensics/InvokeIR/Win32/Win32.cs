@@ -184,8 +184,10 @@ namespace InvokeIR.Win32
 
             // Set offset to begin reading from the drive
             streamToRead.Position = (long)offset;
+
             // Create a byte array to read into
             byte[] buf = new byte[sizeToRead];
+
             // Read buf.Length bytes (sizeToRead) from offset 
             try
             {
