@@ -42,9 +42,9 @@ namespace InvokeIR.PowerForensics.NTFS
             internal ulong TotalSectors;
             internal ulong LCN_MFT;
             internal ulong LCN_MFTMirr;
-            internal byte ClustersPerFileRecord;
+            internal sbyte ClustersPerFileRecord;
             internal byte[] NotUsed4;
-            internal byte ClustersPerIndexBlock;
+            internal sbyte ClustersPerIndexBlock;
             internal byte[] NotUsed5;
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 8)]
             internal string VolumeSN;
@@ -77,9 +77,9 @@ namespace InvokeIR.PowerForensics.NTFS
                 TotalSectors = BitConverter.ToUInt64(bytes, 40);
                 LCN_MFT = BitConverter.ToUInt64(bytes, 48);
                 LCN_MFTMirr = BitConverter.ToUInt64(bytes, 56);
-                ClustersPerFileRecord = bytes[64];
+                ClustersPerFileRecord = (sbyte)bytes[64];
                 NotUsed4 = bytes.Skip(64).Take(3).ToArray();
-                ClustersPerIndexBlock = bytes[68];
+                ClustersPerIndexBlock = (sbyte)bytes[68];
                 NotUsed5 = bytes.Skip(68).Take(3).ToArray();
                 VolumeSN = BitConverter.ToString(bytes.Skip(72).Take(8).ToArray()).Replace("-", "");
                 Code = bytes.Skip(80).Take(430).ToArray();
@@ -95,7 +95,9 @@ namespace InvokeIR.PowerForensics.NTFS
         #region Properties
 
         public readonly ushort BytesPerSector;
-        public readonly byte SectorsPerCluster;
+        public readonly uint BytesPerCluster;
+        public readonly double BytesPerFileRecord;
+        public readonly double BytesPerIndexBlock;
         public readonly ushort ReservedSectors;
         public readonly ushort SectorsPerTrack;
         public readonly ushort NumberOfHeads;
@@ -103,8 +105,6 @@ namespace InvokeIR.PowerForensics.NTFS
         public readonly ulong TotalSectors;
         public readonly ulong MFTStartIndex;
         public readonly ulong MFTMirrStartIndex;
-        public readonly byte ClustersPerFileRecord;
-        public readonly byte ClustersPerIndexBlock;
         public readonly string VolumeSN;
         public readonly byte[] CodeSection;
 
@@ -119,15 +119,30 @@ namespace InvokeIR.PowerForensics.NTFS
 
             // Assign object properties
             BytesPerSector = structVBR.BytesPerSector;
-            SectorsPerCluster = structVBR.SectorsPerCluster;
+            BytesPerCluster = (uint)(structVBR.SectorsPerCluster * BytesPerSector);
+            if (structVBR.ClustersPerFileRecord < 0)
+            {
+                BytesPerFileRecord = Math.Pow(2, Math.Abs(structVBR.ClustersPerFileRecord));
+            }
+            else
+            {
+                BytesPerFileRecord = structVBR.ClustersPerFileRecord * BytesPerCluster;
+            }
+
+            if (structVBR.ClustersPerIndexBlock < 0)
+            {
+                BytesPerIndexBlock = Math.Pow(2, Math.Abs(structVBR.ClustersPerIndexBlock));
+            }
+            else
+            {
+                BytesPerIndexBlock = structVBR.ClustersPerIndexBlock * BytesPerCluster;
+            }
             ReservedSectors = structVBR.ReservedSectors;
             NumberOfHeads = structVBR.NumberOfHeads;
             HiddenSectors = structVBR.HiddenSectors;
             TotalSectors = structVBR.TotalSectors;
             MFTStartIndex = structVBR.LCN_MFT;
             MFTMirrStartIndex = structVBR.LCN_MFTMirr;
-            ClustersPerFileRecord = structVBR.ClustersPerFileRecord;
-            ClustersPerIndexBlock = structVBR.ClustersPerIndexBlock;
             VolumeSN = structVBR.VolumeSN;
             CodeSection = structVBR.Code;
         }

@@ -8,3 +8,8 @@ C:\Users\Uproot\Documents\GitHub\PowerForensics\src\Invoke-IR.PowerForensics\bin
 C:\Users\Uproot\Documents\GitHub\PowerForensics\src\Invoke-IR.PowerForensics\obj\Debug\PowerForensics.csprojResolveAssemblyReference.cache
 C:\Users\Uproot\Documents\GitHub\PowerForensics\src\Invoke-IR.PowerForensics\obj\Debug\Invoke-IR.PowerForensics.dll
 C:\Users\Uproot\Documents\GitHub\PowerForensics\src\Invoke-IR.PowerForensics\obj\Debug\Invoke-IR.PowerForensics.pdb
+C:\Users\Uproot\Documents\GitHub\PowerForensics_Source\Invoke-IR.PowerForensics\obj\Debug\PowerForensics.csprojResolveAssemblyReference.cache
+C:\Users\Uproot\Documents\GitHub\PowerForensics_Source\Invoke-IR.PowerForensics\obj\Debug\Invoke-IR.PowerForensics.dll
+C:\Users\Uproot\Documents\GitHub\PowerForensics_Source\Invoke-IR.PowerForensics\bin\Debug\Invoke-IR.PowerForensics.dll
+C:\Users\Uproot\Documents\GitHub\PowerForensics_Source\Invoke-IR.PowerForensics\bin\Debug\Invoke-IR.PowerForensics.pdb
+C:\Users\Uproot\Documents\GitHub\PowerForensics_Source\Invoke-IR.PowerForensics\obj\Debug\Invoke-IR.PowerForensics.pdb
