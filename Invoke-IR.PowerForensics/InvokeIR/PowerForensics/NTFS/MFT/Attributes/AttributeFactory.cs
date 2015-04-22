@@ -63,14 +63,13 @@ namespace InvokeIR.PowerForensics.NTFS
                             return new Data(AttrBytes, AttrName);
 
                         case (Int32)Attr.ATTR_TYPE.INDEX_ROOT:
-                            //IndexRoot indxRootAttr = IndexRoot.Get(AttrBytes, commonAttributeHeader, AttrHeaderResident, AttrName);
-                            break;
+                            return new IndexRoot(AttrBytes, AttrName);
                         
+
                         case (Int32)Attr.ATTR_TYPE.EA_INFORMATION:
                             return new EAInformation(AttrBytes, AttrName);
 
                         case (Int32)Attr.ATTR_TYPE.EA:
-                            //
                             //Console.WriteLine("Attr: EA {0}", commonAttributeHeader.Id);
                             break;
 
